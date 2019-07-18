@@ -4,7 +4,6 @@ r = sr.Recognizer()
 
 with sr.Microphone() as source:
     for i in range(1):
-        print(">>>", end=" ")
         audio = r.listen(source)
 
         try:
@@ -12,4 +11,4 @@ with sr.Microphone() as source:
             print(text)
 
         except:
-            pass
+            print("인식 실패")
