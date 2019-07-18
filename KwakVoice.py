@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 
 import webbrowser
+import pygame
 import os
 import time
 
@@ -13,7 +14,7 @@ engine = pyttsx3.init()
 def do(speaker_text, text_to_print, text_to_say, web_url):
     if web_url == 0:
         if text == speaker_text:
-            print(text_to_print)
+            print(text_to_print + "\n")
             if text_to_say == 0:
                 engine.say(text_to_print)
             else:
@@ -21,7 +22,7 @@ def do(speaker_text, text_to_print, text_to_say, web_url):
             engine.runAndWait()
     else:
         if text == speaker_text:
-            print(text_to_print)
+            print(text_to_print + "\n")
             if text_to_say == 0:
                 engine.say(text_to_print)
             else:
@@ -51,15 +52,3 @@ with sr.Microphone() as source:
             print("\n인식에 실패하였습니다. 다시 시도해 주세요.")
             engine.say("인식에 실패하였습니다. 다시 시도해 주세요.")
             engine.runAndWait()
-
-
-
-
-
-
-
-
-
-
-
-
